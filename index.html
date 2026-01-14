@@ -36,7 +36,7 @@
         }
         
         .logo-container img {
-            max-width: 400px;
+            max-width: 300px;
             height: auto;
         }
         
@@ -289,6 +289,114 @@
             margin-top: 4px;
         }
         
+        .pricing-model {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .pricing-column {
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 24px;
+        }
+        
+        .pricing-column h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #888;
+            text-align: center;
+        }
+        
+        .pricing-column.hybrid h4 {
+            color: #10b981;
+        }
+        
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-label {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .pricing-value {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .pricing-value.highlight {
+            color: #10b981;
+        }
+        
+        .performance-tiers {
+            margin-top: 30px;
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 24px;
+        }
+        
+        .tier-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #10b981;
+        }
+        
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+        .tier-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .tier-card .tier-name {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .tier-card .tier-threshold {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+        
+        .tier-card .tier-bonus {
+            font-size: 20px;
+            font-weight: 700;
+            color: #10b981;
+        }
+        
         .recommendations {
             background: #1a1a1a;
             border: 1px solid #333;
@@ -384,6 +492,14 @@
             .projection-metrics {
                 grid-template-columns: 1fr;
             }
+            
+            .pricing-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -391,7 +507,7 @@
     <div class="container">
         <div class="header">
             <div class="logo-container">
-                <img src="power-slap-logo.png" alt="Power Slap Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Power_Slap_Logo.svg/800px-Power_Slap_Logo.svg.png" alt="Power Slap Logo">
             </div>
             <h1>Digital Performance Audit</h1>
             <div class="subtitle">Strategic Analysis & Optimization Framework</div>
@@ -414,13 +530,13 @@
                 </div>
                 
                 <div class="metric-card">
-                    <div class="metric-label">Total OMV</div>
+                    <div class="metric-label">Total EMV</div>
                     <div class="metric-value">$1.05M</div>
                     <div class="metric-context">+8.7% vs last period</div>
                 </div>
                 
                 <div class="metric-card">
-                    <div class="metric-label">Average OMV</div>
+                    <div class="metric-label">Average EMV Per Post</div>
                     <div class="metric-value">$21,042</div>
                     <div class="metric-context">+4.2% vs last period</div>
                 </div>
@@ -438,74 +554,9 @@
                 </div>
                 
                 <div class="metric-card">
-                    <div class="metric-label">Sponsored OMV</div>
+                    <div class="metric-label">Total Sponsored EMV</div>
                     <div class="metric-value">$991K</div>
                     <div class="metric-context">+20.5% vs last period</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">12-Month Revenue Projection</h2>
-            
-            <div class="chart-container">
-                <div class="chart-title">Projected OMV Growth Through Optimization</div>
-                
-                <div class="bar-chart">
-                    <div class="bar">
-                        <div class="bar-fill current" style="height: 180px;">
-                            <div class="bar-value">$1.05M</div>
-                        </div>
-                        <div class="bar-label">Current<br>Monthly OMV</div>
-                    </div>
-                    
-                    <div class="bar">
-                        <div class="bar-fill" style="height: 240px;">
-                            <div class="bar-value">$1.31M</div>
-                        </div>
-                        <div class="bar-label">Q1 2026<br>(+25%)</div>
-                    </div>
-                    
-                    <div class="bar">
-                        <div class="bar-fill" style="height: 270px;">
-                            <div class="bar-value">$1.47M</div>
-                        </div>
-                        <div class="bar-label">Q2 2026<br>(+40%)</div>
-                    </div>
-                    
-                    <div class="bar">
-                        <div class="bar-fill" style="height: 285px;">
-                            <div class="bar-value">$1.58M</div>
-                        </div>
-                        <div class="bar-label">Q3 2026<br>(+50%)</div>
-                    </div>
-                    
-                    <div class="bar">
-                        <div class="bar-fill" style="height: 300px;">
-                            <div class="bar-value">$1.68M</div>
-                        </div>
-                        <div class="bar-label">Q4 2026<br>(+60%)</div>
-                    </div>
-                </div>
-                
-                <div class="projection-metrics">
-                    <div class="projection-card">
-                        <div class="label">Annual OMV Growth</div>
-                        <div class="value">$6.5M</div>
-                        <div class="change">+43% vs current run rate</div>
-                    </div>
-                    
-                    <div class="projection-card">
-                        <div class="label">Time Savings</div>
-                        <div class="value">1,750hrs</div>
-                        <div class="change">Through automation</div>
-                    </div>
-                    
-                    <div class="projection-card">
-                        <div class="label">Average ROI</div>
-                        <div class="value">11.3X</div>
-                        <div class="change">Partner investment return</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -727,7 +778,7 @@
                         Scale Collaborator Distribution Strategy
                         <span class="impact-badge">High Impact</span>
                     </h4>
-                    <p>Current athlete collaborator rate: ~6% of total volume (3 collaborations / 50 posts). Industry benchmark for combat sports: 20%. Increasing collaborator posts from 3 to 10 per month would unlock an estimated additional $180K-$240K in monthly OMV through expanded reach. Initial collaborator content performed at account average, indicating scalability without quality degradation.</p>
+                    <p>Current athlete collaborator rate: ~6% of total volume (3 collaborations / 50 posts). Industry benchmark for combat sports: 20%. Increasing collaborator posts from 3 to 10 per month would unlock an estimated additional $180K-$240K in monthly EMV through expanded reach. Initial collaborator content performed at account average, indicating scalability without quality degradation.</p>
                 </div>
                 
                 <div class="recommendation-item">
@@ -754,7 +805,7 @@
                         Deploy Quarterly Projection Framework
                         <span class="impact-badge">High Impact</span>
                     </h4>
-                    <p>Utilize AVI's projection feature to set quarterly OMV targets and optimal posting cadence. This shifts team from reactive content creation to strategic output aligned with revenue goals. Recommended Q1 2026 target: $1.8M OMV (71% increase) through format optimization and collaborator scaling. Monthly check-ins ensure teams remain on track toward valuation-driving KPIs.</p>
+                    <p>Utilize AVI's projection feature to set quarterly EMV targets and optimal posting cadence. This shifts team from reactive content creation to strategic output aligned with revenue goals. Recommended Q1 2026 target: $1.8M EMV (71% increase) through format optimization and collaborator scaling. Monthly check-ins ensure teams remain on track toward valuation-driving KPIs.</p>
                 </div>
                 
                 <div class="recommendation-item">
@@ -764,6 +815,150 @@
                         <span class="impact-badge medium">Scale Play</span>
                     </h4>
                     <p>Extend framework to TikTok, X (Twitter), YouTube, and Facebook. Current Instagram-only tracking leaves significant value unattributed. Cross-platform integration provides complete brand exposure visibility and unlocks bundled partnership packages. Implementation sequence: TikTok (Week 1), YouTube (Week 2), X (Week 3), Facebook (Week 4).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Performance-Based Sponsorship Model</h2>
+            
+            <div class="pricing-model">
+                <div class="chart-title">Hybrid Pricing Structure: Flat Rate + Performance Bonuses</div>
+                
+                <div class="pricing-comparison">
+                    <div class="pricing-column">
+                        <h4>Traditional Flat Rate Model</h4>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Annual Package</span>
+                            <span class="pricing-value">$500,000</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Guaranteed Posts</span>
+                            <span class="pricing-value">24 posts/year</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Performance Bonus</span>
+                            <span class="pricing-value">None</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Risk to Brand</span>
+                            <span class="pricing-value">High</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Upside to Property</span>
+                            <span class="pricing-value">Capped</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-column hybrid">
+                        <h4>Hybrid Performance Model</h4>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Base Package</span>
+                            <span class="pricing-value highlight">$350,000</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Guaranteed Posts</span>
+                            <span class="pricing-value highlight">24 posts/year</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Performance Bonus Pool</span>
+                            <span class="pricing-value highlight">Up to $300K</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Risk to Brand</span>
+                            <span class="pricing-value highlight">Reduced</span>
+                        </div>
+                        <div class="pricing-row">
+                            <span class="pricing-label">Upside to Property</span>
+                            <span class="pricing-value highlight">Uncapped</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="performance-tiers">
+                    <div class="tier-title">Performance Bonus Structure (Example: $5 CPM on Earned Views)</div>
+                    <div class="tier-grid">
+                        <div class="tier-card">
+                            <div class="tier-name">Bronze Tier</div>
+                            <div class="tier-threshold">10M - 20M Views</div>
+                            <div class="tier-bonus">+$50K</div>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-name">Silver Tier</div>
+                            <div class="tier-threshold">20M - 35M Views</div>
+                            <div class="tier-bonus">+$125K</div>
+                        </div>
+                        <div class="tier-card">
+                            <div class="tier-name">Gold Tier</div>
+                            <div class="tier-threshold">35M+ Views</div>
+                            <div class="tier-bonus">+$300K</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">12-Month Revenue Projection</h2>
+            
+            <div class="chart-container">
+                <div class="chart-title">Projected EMV Growth Through Optimization</div>
+                
+                <div class="bar-chart">
+                    <div class="bar">
+                        <div class="bar-fill current" style="height: 180px;">
+                            <div class="bar-value">$1.05M</div>
+                        </div>
+                        <div class="bar-label">Current<br>Monthly EMV</div>
+                    </div>
+                    
+                    <div class="bar">
+                        <div class="bar-fill" style="height: 240px;">
+                            <div class="bar-value">$1.31M</div>
+                        </div>
+                        <div class="bar-label">Q1 2026<br>(+25%)</div>
+                    </div>
+                    
+                    <div class="bar">
+                        <div class="bar-fill" style="height: 270px;">
+                            <div class="bar-value">$1.47M</div>
+                        </div>
+                        <div class="bar-label">Q2 2026<br>(+40%)</div>
+                    </div>
+                    
+                    <div class="bar">
+                        <div class="bar-fill" style="height: 285px;">
+                            <div class="bar-value">$1.58M</div>
+                        </div>
+                        <div class="bar-label">Q3 2026<br>(+50%)</div>
+                    </div>
+                    
+                    <div class="bar">
+                        <div class="bar-fill" style="height: 300px;">
+                            <div class="bar-value">$1.68M</div>
+                        </div>
+                        <div class="bar-label">Q4 2026<br>(+60%)</div>
+                    </div>
+                </div>
+                
+                <div class="projection-metrics">
+                    <div class="projection-card">
+                        <div class="label">Annual EMV Growth</div>
+                        <div class="value">$6.5M</div>
+                        <div class="change">+43% vs current run rate</div>
+                    </div>
+                    
+                    <div class="projection-card">
+                        <div class="label">Time Savings</div>
+                        <div class="value">1,750hrs</div>
+                        <div class="change">Through automation</div>
+                    </div>
+                    
+                    <div class="projection-card">
+                        <div class="label">Average ROI</div>
+                        <div class="value">11.3X</div>
+                        <div class="change">Partner investment return</div>
+                    </div>
                 </div>
             </div>
         </div>
