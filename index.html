@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thrill Sports | Power Slap Digital Performance Audit</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -19,10 +15,7 @@
             padding: 40px 20px;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         
         .header {
             text-align: center;
@@ -37,17 +30,11 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
         
-        .logo-container img {
-            max-width: 300px;
-            height: auto;
-        }
-        
-        .logo-container .instagram-logo {
-            max-width: 50px;
-            height: auto;
-        }
+        .logo-container img { max-width: 300px; height: auto; }
+        .logo-container .instagram-logo { max-width: 50px; height: auto; }
         
         .header h1 {
             font-size: 42px;
@@ -56,21 +43,196 @@
             letter-spacing: -1px;
         }
         
-        .header .subtitle {
-            font-size: 18px;
-            color: #888;
-            font-weight: 400;
+        .header .subtitle { font-size: 18px; color: #888; font-weight: 400; }
+        .header .date { font-size: 14px; color: #666; margin-top: 8px; }
+
+        /* NEW: Operating System Banner */
+        .os-banner {
+            max-width: 980px;
+            margin: 28px auto 0;
+            background: linear-gradient(135deg, rgba(0,70,255,0.25) 0%, rgba(16,185,129,0.12) 100%);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 14px;
+            padding: 18px 20px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
-        
-        .header .date {
+
+        .os-kicker {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.12);
+            font-size: 12px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #d7d7d7;
+            margin-bottom: 12px;
+        }
+
+        .os-kicker .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 0 4px rgba(16,185,129,0.15);
+        }
+
+        .os-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 10px;
+        }
+
+        .os-subtext {
+            color: #c9c9c9;
             font-size: 14px;
-            color: #666;
-            margin-top: 8px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .os-pill {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: left;
+            min-height: 84px;
+        }
+
+        .os-pill .pill-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .os-pill .pill-label {
+            font-size: 11px;
+            color: #a9a9a9;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            font-weight: 700;
+        }
+
+        .os-pill .pill-icon {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .os-pill .pill-text {
+            font-size: 13px;
+            color: #e7e7e7;
+            line-height: 1.45;
+        }
+
+        .os-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 16px 0 14px;
+        }
+
+        .os-support {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .support-card {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .support-title {
+            font-size: 12px;
+            color: #a9a9a9;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .support-list {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .support-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: #d9d9d9;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .support-list .check {
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(16,185,129,0.15);
+            border: 1px solid rgba(16,185,129,0.35);
+            color: #10b981;
+            font-weight: 900;
+            flex: 0 0 18px;
+            margin-top: 2px;
+        }
+
+        .support-micro {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .micro {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .micro .micro-label {
+            font-size: 11px;
+            color: #a9a9a9;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .micro .micro-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+            margin-bottom: 4px;
+        }
+
+        .micro .micro-note {
+            font-size: 12px;
+            color: #bdbdbd;
+            line-height: 1.4;
         }
         
-        .section {
-            margin-bottom: 60px;
-        }
+        .section { margin-bottom: 60px; }
         
         .section-title {
             font-size: 28px;
@@ -96,10 +258,7 @@
             transition: transform 0.2s, border-color 0.2s;
         }
         
-        .metric-card:hover {
-            transform: translateY(-4px);
-            border-color: #0046FF;
-        }
+        .metric-card:hover { transform: translateY(-4px); border-color: #0046FF; }
         
         .metric-label {
             font-size: 13px;
@@ -110,18 +269,8 @@
             font-weight: 600;
         }
         
-        .metric-value {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 4px;
-        }
-        
-        .metric-context {
-            font-size: 13px;
-            color: #10b981;
-            font-weight: 600;
-        }
+        .metric-value { font-size: 36px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+        .metric-context { font-size: 13px; color: #10b981; font-weight: 600; }
         
         .highlight-card {
             background: linear-gradient(135deg, #0046FF 0%, #0039CC 100%);
@@ -130,17 +279,8 @@
             margin-bottom: 40px;
         }
         
-        .highlight-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        
-        .highlight-card p {
-            font-size: 16px;
-            line-height: 1.7;
-            opacity: 0.95;
-        }
+        .highlight-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 600; }
+        .highlight-card p { font-size: 16px; line-height: 1.7; opacity: 0.95; }
         
         .sponsors-table {
             background: #1a1a1a;
@@ -158,9 +298,7 @@
             transition: background 0.2s;
         }
         
-        .sponsor-row:hover {
-            background: #222;
-        }
+        .sponsor-row:hover { background: #222; }
         
         .sponsor-row.header {
             background: #0046FF;
@@ -170,9 +308,7 @@
             letter-spacing: 0.5px;
         }
         
-        .sponsor-row:last-child {
-            border-bottom: none;
-        }
+        .sponsor-row:last-child { border-bottom: none; }
         
         .sponsor-name {
             font-weight: 600;
@@ -191,15 +327,8 @@
             border-radius: 4px;
         }
         
-        .sponsor-stat {
-            font-size: 14px;
-            color: #aaa;
-        }
-        
-        .emv-value {
-            color: #10b981;
-            font-weight: 600;
-        }
+        .sponsor-stat { font-size: 14px; color: #aaa; }
+        .emv-value { color: #10b981; font-weight: 600; }
         
         .chart-container {
             background: #1a1a1a;
@@ -209,12 +338,7 @@
             margin-bottom: 40px;
         }
         
-        .chart-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            text-align: center;
-        }
+        .chart-title { font-size: 20px; font-weight: 600; margin-bottom: 40px; text-align: center; }
         
         .bar-chart {
             display: flex;
@@ -229,9 +353,7 @@
         .bar-chart::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 1px;
             background: #333;
         }
@@ -253,9 +375,7 @@
             position: relative;
         }
         
-        .bar-fill.current {
-            background: linear-gradient(180deg, #666 0%, #555 100%);
-        }
+        .bar-fill.current { background: linear-gradient(180deg, #666 0%, #555 100%); }
         
         .bar-value {
             position: absolute;
@@ -298,17 +418,8 @@
             margin-bottom: 8px;
         }
         
-        .projection-card .value {
-            font-size: 28px;
-            font-weight: 700;
-            color: #10b981;
-        }
-        
-        .projection-card .change {
-            font-size: 13px;
-            color: #10b981;
-            margin-top: 4px;
-        }
+        .projection-card .value { font-size: 28px; font-weight: 700; color: #10b981; }
+        .projection-card .change { font-size: 13px; color: #10b981; margin-top: 4px; }
         
         .pricing-model {
             background: #1a1a1a;
@@ -340,9 +451,7 @@
             text-align: center;
         }
         
-        .pricing-column.hybrid h4 {
-            color: #10b981;
-        }
+        .pricing-column.hybrid h4 { color: #10b981; }
         
         .pricing-row {
             display: flex;
@@ -351,23 +460,11 @@
             border-bottom: 1px solid #2a2a2a;
         }
         
-        .pricing-row:last-child {
-            border-bottom: none;
-        }
+        .pricing-row:last-child { border-bottom: none; }
         
-        .pricing-label {
-            font-size: 14px;
-            color: #aaa;
-        }
-        
-        .pricing-value {
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .pricing-value.highlight {
-            color: #10b981;
-        }
+        .pricing-label { font-size: 14px; color: #aaa; }
+        .pricing-value { font-size: 14px; font-weight: 600; }
+        .pricing-value.highlight { color: #10b981; }
         
         .performance-tiers {
             margin-top: 30px;
@@ -385,11 +482,7 @@
             color: #10b981;
         }
         
-        .tier-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         
         .tier-card {
             background: #1a1a1a;
@@ -399,24 +492,9 @@
             text-align: center;
         }
         
-        .tier-card .tier-name {
-            font-size: 12px;
-            color: #888;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        
-        .tier-card .tier-threshold {
-            font-size: 14px;
-            color: #aaa;
-            margin-bottom: 8px;
-        }
-        
-        .tier-card .tier-bonus {
-            font-size: 20px;
-            font-weight: 700;
-            color: #10b981;
-        }
+        .tier-card .tier-name { font-size: 12px; color: #888; text-transform: uppercase; margin-bottom: 8px; }
+        .tier-card .tier-threshold { font-size: 14px; color: #aaa; margin-bottom: 8px; }
+        .tier-card .tier-bonus { font-size: 20px; font-weight: 700; color: #10b981; }
         
         .recommendations {
             background: #1a1a1a;
@@ -425,14 +503,8 @@
             padding: 32px;
         }
         
-        .recommendation-item {
-            padding: 24px 0;
-            border-bottom: 1px solid #2a2a2a;
-        }
-        
-        .recommendation-item:last-child {
-            border-bottom: none;
-        }
+        .recommendation-item { padding: 24px 0; border-bottom: 1px solid #2a2a2a; }
+        .recommendation-item:last-child { border-bottom: none; }
         
         .recommendation-item h4 {
             font-size: 18px;
@@ -441,11 +513,7 @@
             color: #ffffff;
         }
         
-        .recommendation-item p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #aaa;
-        }
+        .recommendation-item p { font-size: 15px; line-height: 1.7; color: #aaa; }
         
         .recommendation-number {
             display: inline-block;
@@ -484,7 +552,7 @@
             color: #fbbf24;
         }
 
-        /* New Time Savings Section Styles */
+        /* Time Savings Section Styles */
         .time-savings-section {
             background: #1a1a1a;
             border: 1px solid #2a2a2a;
@@ -509,27 +577,10 @@
             transition: transform 0.2s, border-color 0.2s;
         }
 
-        .platform-card:hover {
-            transform: translateY(-2px);
-            border-color: #0046FF;
-        }
-
-        .platform-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .platform-name {
-            font-size: 14px;
-            color: #aaa;
-            margin-bottom: 12px;
-        }
-
-        .platform-hours {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-        }
+        .platform-card:hover { transform: translateY(-2px); border-color: #0046FF; }
+        .platform-icon { font-size: 32px; margin-bottom: 8px; }
+        .platform-name { font-size: 14px; color: #aaa; margin-bottom: 12px; }
+        .platform-hours { font-size: 20px; font-weight: 700; color: #ffffff; }
 
         .breakdown-grid {
             display: grid;
@@ -553,18 +604,8 @@
             margin-bottom: 12px;
         }
 
-        .breakdown-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: #fbbf24;
-            margin-bottom: 8px;
-        }
-
-        .breakdown-detail {
-            font-size: 13px;
-            color: #aaa;
-            line-height: 1.5;
-        }
+        .breakdown-value { font-size: 32px; font-weight: 700; color: #fbbf24; margin-bottom: 8px; }
+        .breakdown-detail { font-size: 13px; color: #aaa; line-height: 1.5; }
 
         .total-savings-card {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
@@ -574,22 +615,9 @@
             margin-top: 30px;
         }
 
-        .total-savings-card h3 {
-            font-size: 18px;
-            margin-bottom: 16px;
-            opacity: 0.9;
-        }
-
-        .total-savings-value {
-            font-size: 56px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .total-savings-detail {
-            font-size: 16px;
-            opacity: 0.9;
-        }
+        .total-savings-card h3 { font-size: 18px; margin-bottom: 16px; opacity: 0.9; }
+        .total-savings-value { font-size: 56px; font-weight: 700; margin-bottom: 8px; }
+        .total-savings-detail { font-size: 16px; opacity: 0.9; }
 
         .cost-savings-grid {
             display: grid;
@@ -614,17 +642,8 @@
             margin-bottom: 12px;
         }
 
-        .cost-value {
-            font-size: 36px;
-            font-weight: 700;
-            color: #10b981;
-            margin-bottom: 4px;
-        }
-
-        .cost-detail {
-            font-size: 13px;
-            color: #aaa;
-        }
+        .cost-value { font-size: 36px; font-weight: 700; color: #10b981; margin-bottom: 4px; }
+        .cost-detail { font-size: 13px; color: #aaa; }
         
         .footer {
             text-align: center;
@@ -635,46 +654,24 @@
             font-size: 14px;
         }
         
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
         
+        @media (max-width: 980px) {
+            .os-grid { grid-template-columns: repeat(2, 1fr); }
+            .os-support { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
-            .sponsor-row {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            
-            .bar-chart {
-                height: 350px;
-            }
-            
-            .projection-metrics {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-comparison {
-                grid-template-columns: 1fr;
-            }
-            
-            .tier-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .platform-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .breakdown-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cost-savings-grid {
-                grid-template-columns: 1fr;
-            }
+            .sponsor-row { grid-template-columns: 1fr; gap: 8px; }
+            .bar-chart { height: 350px; }
+            .projection-metrics { grid-template-columns: 1fr; }
+            .pricing-comparison { grid-template-columns: 1fr; }
+            .tier-grid { grid-template-columns: 1fr; }
+            .platform-grid { grid-template-columns: 1fr; }
+            .breakdown-grid { grid-template-columns: 1fr; }
+            .cost-savings-grid { grid-template-columns: 1fr; }
+            .os-grid { grid-template-columns: 1fr; }
+            .support-micro { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -685,50 +682,134 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Power_Slap_Logo.svg/800px-Power_Slap_Logo.svg.png" alt="Power Slap Logo">
                 <img class="instagram-logo" src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-icon-Logo-2016-present.png" alt="Instagram">
             </div>
+
             <h1>Instagram Performance Audit</h1>
             <div class="subtitle">Strategic Analysis & Optimization Framework</div>
             <div class="date">Analysis Period: December 14, 2025 – January 13, 2026</div>
+
+            <!-- NEW: Operating System Banner -->
+            <div class="os-banner">
+                <div class="os-kicker"><span class="dot"></span> Operating System (Not a Report)</div>
+                <div class="os-title">The Power Slap Social Content Operating System</div>
+                <div class="os-subtext">
+                    An audit shows what happened. An operating system makes the next 12 months inevitable.
+                    Athletiverse + AVI is the infrastructure + support layer that keeps Power Slap’s social machine running:
+                    standardized workflows, sponsor-grade measurement, and always-on reporting—without adding headcount or spreadsheet chaos.
+                </div>
+
+                <div class="os-grid">
+                    <div class="os-pill">
+                        <div class="pill-top">
+                            <div class="pill-label">Measure</div><div class="pill-icon">📈</div>
+                        </div>
+                        <div class="pill-text">Always-on EMV + exposure tracking, per post, per sponsor, per series.</div>
+                    </div>
+                    <div class="os-pill">
+                        <div class="pill-top">
+                            <div class="pill-label">Organize</div><div class="pill-icon">🧭</div>
+                        </div>
+                        <div class="pill-text">Format taxonomy + event tagging so content becomes inventory, not noise.</div>
+                    </div>
+                    <div class="os-pill">
+                        <div class="pill-top">
+                            <div class="pill-label">Optimize</div><div class="pill-icon">⚙️</div>
+                        </div>
+                        <div class="pill-text">Decision loops for cadence, collaborators, creative mixes, and sponsor integrations.</div>
+                    </div>
+                    <div class="os-pill">
+                        <div class="pill-top">
+                            <div class="pill-label">Monetize</div><div class="pill-icon">💼</div>
+                        </div>
+                        <div class="pill-text">Sponsor reporting + pricing logic that turns content performance into renewals.</div>
+                    </div>
+                </div>
+
+                <div class="os-divider"></div>
+
+                <div class="os-support">
+                    <div class="support-card">
+                        <div class="support-title">What makes it an “Operating System”</div>
+                        <ul class="support-list">
+                            <li><span class="check">✓</span> We run the system with you: implementation, governance, and ongoing optimization cycles.</li>
+                            <li><span class="check">✓</span> We maintain sponsor data integrity (logos, categories, rules) so reporting stays clean and defensible.</li>
+                            <li><span class="check">✓</span> We standardize outputs across teams (content + commercial) so every post can be sold, measured, and improved.</li>
+                            <li><span class="check">✓</span> We remove operational drag: automation replaces manual tracking, slides, and month-end scrambles.</li>
+                        </ul>
+                    </div>
+
+                    <div class="support-micro">
+                        <div class="micro">
+                            <div class="micro-label">Primary Outcome</div>
+                            <div class="micro-value">More sponsor-proof</div>
+                            <div class="micro-note">Negotiations backed by repeatable measurement, not anecdotes.</div>
+                        </div>
+                        <div class="micro">
+                            <div class="micro-label">Operational Outcome</div>
+                            <div class="micro-value">Less human lift</div>
+                            <div class="micro-note">The system does the tracking; your team does the building.</div>
+                        </div>
+                        <div class="micro">
+                            <div class="micro-label">Commercial Outcome</div>
+                            <div class="micro-value">Higher renewals</div>
+                            <div class="micro-note">Clear performance = faster renewals + easier upsells.</div>
+                        </div>
+                        <div class="micro">
+                            <div class="micro-label">Strategic Outcome</div>
+                            <div class="micro-value">Compounding EMV</div>
+                            <div class="micro-note">Each cycle improves formats, distribution, and sponsor packaging.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="highlight-card">
             <h3>Executive Summary</h3>
-            <p>Your content's working. Your sponsors are seeing results. But right now, you're using Zoomph for broadcast valuation, Sponsr United for brand spend trends in your category, and managing content strategy separately—there's no single platform that unifies content, sponsorship, and analytics for social media. This audit shows what's possible when all three operate from one command center. Athletiverse's agency background enables us to pair strategic execution with a platform purpose-built for sponsorship and content teams to work unfragmented. We've identified clear paths to grow your Instagram EMV from $1.05M to $6.5M annually while cutting 1,750 hours of manual work—giving your team the infrastructure to turn every post into a measurable revenue driver and every sponsor conversation into a data-backed negotiation.</p>
+            <p>
+                Your content's working. Your sponsors are seeing results. But right now, you're using Zoomph for broadcast valuation,
+                Sponsr United for brand spend trends in your category, and managing content strategy separately—there's no single platform
+                that unifies content, sponsorship, and analytics for social media.
+                <strong>This audit is the baseline—AVI + Athletiverse is the operating system.</strong>
+                We provide the platform plus the support required to standardize workflows, automate sponsor reporting,
+                and keep optimization running continuously. We've identified clear paths to grow your Instagram EMV from
+                $1.05M to $6.5M annually while cutting 1,750 hours of manual work—giving your team the infrastructure to
+                turn every post into a measurable revenue driver and every sponsor conversation into a data-backed negotiation.
+            </p>
         </div>
 
         <div class="section">
             <h2 class="section-title">Current Performance Snapshot</h2>
-            
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label">Total Posts</div>
                     <div class="metric-value">50</div>
                     <div class="metric-context">+19.0% vs last period</div>
                 </div>
-                
+
                 <div class="metric-card">
                     <div class="metric-label">Total EMV</div>
                     <div class="metric-value">$1.05M</div>
                     <div class="metric-context">+8.7% vs last period</div>
                 </div>
-                
+
                 <div class="metric-card">
                     <div class="metric-label">Average EMV Per Post</div>
                     <div class="metric-value">$21,042</div>
                     <div class="metric-context">+4.2% vs last period</div>
                 </div>
-                
+
                 <div class="metric-card">
                     <div class="metric-label">Total Views</div>
                     <div class="metric-value">62.3M</div>
                     <div class="metric-context">+13.6% vs last period</div>
                 </div>
-                
+
                 <div class="metric-card">
                     <div class="metric-label">Total Likes</div>
                     <div class="metric-value">1.07M</div>
                     <div class="metric-context">+12.4% vs last period</div>
                 </div>
-                
+
                 <div class="metric-card">
                     <div class="metric-label">Total Sponsored EMV</div>
                     <div class="metric-value">$978K</div>
@@ -739,7 +820,7 @@
 
         <div class="section">
             <h2 class="section-title">Complete Sponsor Performance Analysis</h2>
-            
+
             <div class="sponsors-table">
                 <div class="sponsor-row header">
                     <div>Sponsor</div>
@@ -748,7 +829,7 @@
                     <div>Avg EMV/Post</div>
                     <div>Engagement</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://www.citypng.com/public/uploads/preview/hd-monster-logo-sign-transparent-png-701751694778703n3cbkpxf2b.png" alt="Monster" class="sponsor-logo">
@@ -759,7 +840,7 @@
                     <div class="sponsor-stat">$23,999</div>
                     <div class="sponsor-stat">1.02M</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://shop.10xhealthsystem.com/cdn/shop/files/Logo_1_9b80d49d-ed28-4524-b4a4-773ca01b31e5.png?height=628&pad_color=fff&v=1689340408&width=1200" alt="10X Health" class="sponsor-logo">
@@ -770,7 +851,7 @@
                     <div class="sponsor-stat">$39,548</div>
                     <div class="sponsor-stat">762.9K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Wienerschnitzel_logo.svg/1280px-Wienerschnitzel_logo.svg.png" alt="Wienerschnitzel" class="sponsor-logo">
@@ -781,7 +862,7 @@
                     <div class="sponsor-stat">$158,457</div>
                     <div class="sponsor-stat">574.2K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://upload.wikimedia.org/wikipedia/en/1/1e/Death_Row_Records_logo.svg" alt="Death Row Records" class="sponsor-logo">
@@ -792,7 +873,7 @@
                     <div class="sponsor-stat">$30,250</div>
                     <div class="sponsor-stat">121.3K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://static.wixstatic.com/media/541236_5f6990ac10864a6c9ceee4c4e7a2c518~mv2.png/v1/fill/w_512,h_512,al_c,q_85,enc_avif,quality_auto/SLS%20Shield.png" alt="SLS" class="sponsor-logo">
@@ -803,7 +884,7 @@
                     <div class="sponsor-stat">$50,600</div>
                     <div class="sponsor-stat">106.1K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Caesars_Entertainment_logo_2020.svg" alt="Caesars" class="sponsor-logo">
@@ -814,7 +895,7 @@
                     <div class="sponsor-stat">$50,600</div>
                     <div class="sponsor-stat">106.1K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://kudosnacks.com/cdn/shop/files/WEB_LOGO_4x_9ca5dbeb-4151-4d85-98c7-5654db1c5af3.png?v=1761852681&width=5760" alt="Kudo" class="sponsor-logo">
@@ -825,7 +906,7 @@
                     <div class="sponsor-stat">$20,120</div>
                     <div class="sponsor-stat">50.2K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://www.just-food.com/wp-content/uploads/sites/28/2021/04/2021-02-19-15-07-slatemilk_cropped_80.png" alt="Slate Protein Drinks" class="sponsor-logo">
@@ -836,7 +917,7 @@
                     <div class="sponsor-stat">$16,952</div>
                     <div class="sponsor-stat">38.8K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/0/AmazonStores/ATVPDKIKX0DER/e1fe54cebb3954bba2f301bd21c0b3db.w1200.h1200._RO599,1,0,0,0,0,0,0,0,0,15_FMpng_.jpg" alt="Happy Dad" class="sponsor-logo">
@@ -847,7 +928,7 @@
                     <div class="sponsor-stat">$8,165</div>
                     <div class="sponsor-stat">40.0K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://cdn.worldvectorlogo.com/logos/crypto-com-1.svg" alt="Crypto.com" class="sponsor-logo">
@@ -858,7 +939,7 @@
                     <div class="sponsor-stat">$7,832</div>
                     <div class="sponsor-stat">24.0K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://wolfpak.com/cdn/shop/files/BLACK_SQUARE_LOGO_COPYRIGHT_1.png?v=1766780342&width=2084" alt="Wolf Pak" class="sponsor-logo">
@@ -869,7 +950,7 @@
                     <div class="sponsor-stat">$7,861</div>
                     <div class="sponsor-stat">16.9K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://s3-us-west-1.amazonaws.com/boom.bucket/main/boom.png" alt="Boom Mobile" class="sponsor-logo">
@@ -880,7 +961,7 @@
                     <div class="sponsor-stat">$11,560</div>
                     <div class="sponsor-stat">23.4K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Rumble_logo_2022.svg/1280px-Rumble_logo_2022.svg.png" alt="Rumble" class="sponsor-logo">
@@ -891,7 +972,7 @@
                     <div class="sponsor-stat">$5,257</div>
                     <div class="sponsor-stat">20.0K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ca405899-eef9-43ab-b0e2-48949cadda60.jpg" alt="Bored Jerky" class="sponsor-logo">
@@ -902,7 +983,7 @@
                     <div class="sponsor-stat">$18,661</div>
                     <div class="sponsor-stat">19.5K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://images.squarespace-cdn.com/content/v1/673fe8aee8658876c316d45b/7483582f-d136-44b1-b346-f1f63107cc21/Logo+-+Dios-Azul%C2%AE+-+Gradient-Blue+-+Horz+-+TIGHT-CROP.png" alt="Dios Azul" class="sponsor-logo">
@@ -913,7 +994,7 @@
                     <div class="sponsor-stat">$8,435</div>
                     <div class="sponsor-stat">12.5K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/CircaLogo.svg" alt="Circa" class="sponsor-logo">
@@ -924,7 +1005,7 @@
                     <div class="sponsor-stat">$7,594</div>
                     <div class="sponsor-stat">10.5K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://img.freepik.com/premium-vector/riyadh-season-colorful-logo-saudi-arabia_687086-64.jpg" alt="Riyadh Season" class="sponsor-logo">
@@ -935,7 +1016,7 @@
                     <div class="sponsor-stat">$7,494</div>
                     <div class="sponsor-stat">9.6K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://vectorseek.com/wp-content/uploads/2023/12/Nitro-Circus-New-Logo-Vector.svg-.png" alt="Nitro Circus" class="sponsor-logo">
@@ -946,7 +1027,7 @@
                     <div class="sponsor-stat">$14,253</div>
                     <div class="sponsor-stat">12.3K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://static.casino.guru/pict/195841/4226_500x250_dark.svg?timestamp=1736753988000&imageDataId=1152400&width=120" alt="500 Casino" class="sponsor-logo">
@@ -957,7 +1038,7 @@
                     <div class="sponsor-stat">$9,643</div>
                     <div class="sponsor-stat">7.5K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://doubleeaglelaw.com/wp-content/uploads/2025/08/DoubleEagleInjuryLawLogo_fullcolor.png" alt="Double Eagle Injury Law" class="sponsor-logo">
@@ -968,7 +1049,7 @@
                     <div class="sponsor-stat">$7,746</div>
                     <div class="sponsor-stat">7.1K</div>
                 </div>
-                
+
                 <div class="sponsor-row">
                     <div class="sponsor-name">
                         <img src="https://inkedbread.com/cdn/shop/files/Inked_Bread_Co._-_Logo_JAN_2023-removebg-preview_2_6b1e75e8-ce98-49de-9525-c4febe5ece53.png?v=1705452285" alt="Inked Bread Co." class="sponsor-logo">
@@ -984,7 +1065,7 @@
 
         <div class="section">
             <h2 class="section-title">Strategic Recommendations</h2>
-            
+
             <div class="recommendations">
                 <div class="recommendation-item">
                     <h4>
@@ -994,7 +1075,7 @@
                     </h4>
                     <p>Deploy systematic hashtag architecture to track format-level performance and create passive media buying opportunities. Current content lacks organizational structure for brands to identify high-performing segments for future activations. Recommended format categories: #powerslap[event number], #knockoutmoments, #behindthescenes, #athletefeatures.</p>
                 </div>
-                
+
                 <div class="recommendation-item">
                     <h4>
                         <span class="recommendation-number">2</span>
@@ -1003,7 +1084,7 @@
                     </h4>
                     <p>Current athlete collaborator rate: ~6% of total volume (3 collaborations / 50 posts). Industry benchmark for combat sports: 20%. Increasing collaborator posts from 3 to 10 per month would unlock an estimated additional $180K-$240K in monthly EMV through expanded reach. Initial collaborator content performed at account average, indicating scalability without quality degradation.</p>
                 </div>
-                
+
                 <div class="recommendation-item">
                     <h4>
                         <span class="recommendation-number">3</span>
@@ -1012,7 +1093,7 @@
                     </h4>
                     <p>Implement monthly auto-generated sponsor dashboards with direct brand access. This enables performance-based deal structures tied to agreed CPM benchmarks tracked in real-time. Current manual reporting creates lag in optimization cycles and limits upsell conversations. Automated reporting reduces internal lift by 1,750+ hours annually while improving partner transparency.</p>
                 </div>
-                
+
                 <div class="recommendation-item">
                     <h4>
                         <span class="recommendation-number">4</span>
@@ -1021,7 +1102,7 @@
                     </h4>
                     <p>Create dedicated hashtag system for event nights (#PS14, #PS15, etc.) to build long-term case study repository. This allows content and commercial teams to analyze format performance across event cycles, identify sponsorship integration best practices, and deliver data-backed recommendations to partners. Historical event data becomes sellable asset for prospecting.</p>
                 </div>
-                
+
                 <div class="recommendation-item">
                     <h4>
                         <span class="recommendation-number">5</span>
@@ -1030,7 +1111,7 @@
                     </h4>
                     <p>Utilize AVI's projection feature to set quarterly EMV targets and optimal posting cadence. This shifts team from reactive content creation to strategic output aligned with revenue goals. Recommended Q1 2026 target: $1.8M EMV (71% increase) through format optimization and collaborator scaling. Monthly check-ins ensure teams remain on track toward valuation-driving KPIs.</p>
                 </div>
-                
+
                 <div class="recommendation-item">
                     <h4>
                         <span class="recommendation-number">6</span>
@@ -1044,10 +1125,10 @@
 
         <div class="section">
             <h2 class="section-title">Performance-Based Sponsorship Model</h2>
-            
+
             <div class="pricing-model">
                 <div class="chart-title">Hybrid Pricing Structure: Flat Rate + Performance Bonuses</div>
-                
+
                 <div class="pricing-comparison">
                     <div class="pricing-column">
                         <h4>Traditional Flat Rate Model</h4>
@@ -1072,7 +1153,7 @@
                             <span class="pricing-value">Capped</span>
                         </div>
                     </div>
-                    
+
                     <div class="pricing-column hybrid">
                         <h4>Hybrid Performance Model</h4>
                         <div class="pricing-row">
@@ -1097,7 +1178,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="performance-tiers">
                     <div class="tier-title">Performance Bonus Structure (Example: $5 CPM on Earned Views)</div>
                     <div class="tier-grid">
@@ -1123,10 +1204,10 @@
 
         <div class="section">
             <h2 class="section-title">12-Month Revenue Projection</h2>
-            
+
             <div class="chart-container">
                 <div class="chart-title">Projected EMV Growth Through Optimization</div>
-                
+
                 <div class="bar-chart">
                     <div class="bar">
                         <div class="bar-fill current" style="height: 180px;">
@@ -1134,28 +1215,28 @@
                         </div>
                         <div class="bar-label">Current<br>Monthly EMV</div>
                     </div>
-                    
+
                     <div class="bar">
                         <div class="bar-fill" style="height: 240px;">
                             <div class="bar-value">$1.31M</div>
                         </div>
                         <div class="bar-label">Q1 2026<br>(+25%)</div>
                     </div>
-                    
+
                     <div class="bar">
                         <div class="bar-fill" style="height: 270px;">
                             <div class="bar-value">$1.47M</div>
                         </div>
                         <div class="bar-label">Q2 2026<br>(+40%)</div>
                     </div>
-                    
+
                     <div class="bar">
                         <div class="bar-fill" style="height: 285px;">
                             <div class="bar-value">$1.58M</div>
                         </div>
                         <div class="bar-label">Q3 2026<br>(+50%)</div>
                     </div>
-                    
+
                     <div class="bar">
                         <div class="bar-fill" style="height: 300px;">
                             <div class="bar-value">$1.68M</div>
@@ -1163,20 +1244,20 @@
                         <div class="bar-label">Q4 2026<br>(+60%)</div>
                     </div>
                 </div>
-                
+
                 <div class="projection-metrics">
                     <div class="projection-card">
                         <div class="label">Annual EMV Growth</div>
                         <div class="value">$6.5M</div>
                         <div class="change">+520% vs current run rate</div>
                     </div>
-                    
+
                     <div class="projection-card">
                         <div class="label">Time Savings</div>
                         <div class="value">1,750hrs</div>
                         <div class="change">Through automation</div>
                     </div>
-                    
+
                     <div class="projection-card">
                         <div class="label">Platform ROI</div>
                         <div class="value">93X</div>
@@ -1186,15 +1267,16 @@
             </div>
         </div>
 
-        <!-- NEW TIME SAVINGS SECTION -->
         <div class="section">
             <h2 class="section-title">Annual Time Savings: Multi-Platform Automation</h2>
-            
+
             <div class="time-savings-section">
                 <div class="chart-title">Eliminate 1,750+ Hours of Manual Work Annually</div>
-                
+
                 <p style="text-align: center; color: #aaa; font-size: 15px; margin-bottom: 30px; line-height: 1.7;">
-                    Without AVI, your team manually tracks sponsors, content formats, and performance metrics across five platforms every month. This projection shows the time reclaimed when automation handles sponsor identification, format categorization, EMV calculation, and reporting across Instagram, TikTok, YouTube, X (Twitter), and Facebook.
+                    Without AVI, your team manually tracks sponsors, content formats, and performance metrics across five platforms every month.
+                    This projection shows the time reclaimed when automation handles sponsor identification, format categorization, EMV calculation,
+                    and reporting across Instagram, TikTok, YouTube, X (Twitter), and Facebook.
                 </p>
 
                 <div class="platform-grid">
@@ -1203,25 +1285,25 @@
                         <div class="platform-name">Instagram</div>
                         <div class="platform-hours">350hrs</div>
                     </div>
-                    
+
                     <div class="platform-card">
                         <div class="platform-icon">🎵</div>
                         <div class="platform-name">TikTok</div>
                         <div class="platform-hours">350hrs</div>
                     </div>
-                    
+
                     <div class="platform-card">
                         <div class="platform-icon">▶️</div>
                         <div class="platform-name">YouTube</div>
                         <div class="platform-hours">350hrs</div>
                     </div>
-                    
+
                     <div class="platform-card">
                         <div class="platform-icon">✖️</div>
                         <div class="platform-name">X (Twitter)</div>
                         <div class="platform-hours">350hrs</div>
                     </div>
-                    
+
                     <div class="platform-card">
                         <div class="platform-icon">📘</div>
                         <div class="platform-name">Facebook</div>
@@ -1237,7 +1319,7 @@
                             Identifying logo appearances, tracking brand mentions, calculating exposure time, and manually logging sponsor data across all platforms
                         </div>
                     </div>
-                    
+
                     <div class="breakdown-card">
                         <div class="breakdown-title">Format Performance Analysis</div>
                         <div class="breakdown-value">500hrs</div>
@@ -1245,7 +1327,7 @@
                             Categorizing content types, comparing format performance, tracking engagement patterns, and identifying optimization opportunities
                         </div>
                     </div>
-                    
+
                     <div class="breakdown-card">
                         <div class="breakdown-title">Report Generation & Distribution</div>
                         <div class="breakdown-value">625hrs</div>
@@ -1267,7 +1349,7 @@
                         <div class="cost-value">$87,500</div>
                         <div class="cost-detail">Based on $50/hour fully-loaded employee cost</div>
                     </div>
-                    
+
                     <div class="cost-card">
                         <div class="cost-label">ROI on AVI Platform</div>
                         <div class="cost-value">93X</div>
@@ -1278,7 +1360,9 @@
                 <div class="highlight-card" style="margin-top: 30px;">
                     <h3>What This Means For Your Team</h3>
                     <p>
-                        Instead of spending 146 hours monthly on manual tracking and reporting across five platforms, your team can focus on strategy, content creation, and partner development. AVI's automated sponsor detection, format tracking, and real-time EMV calculation turn what used to take days into instant insights—freeing your commercial and content teams to drive revenue instead of chasing spreadsheets.
+                        Instead of spending 146 hours monthly on manual tracking and reporting across five platforms, your team can focus on strategy,
+                        content creation, and partner development. AVI's automated sponsor detection, format tracking, and real-time EMV calculation turn what
+                        used to take days into instant insights—freeing your commercial and content teams to drive revenue instead of chasing spreadsheets.
                     </p>
                 </div>
             </div>
