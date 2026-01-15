@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thrill Sports | Power Slap Digital Performance Audit</title>
+    <title>Thrill 1 Sports | Power Slap Digital Performance Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #0a0a0a;
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0a0a0a;
+            /* Added a subtle top-center radial gradient for depth */
+            background-image: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.1), transparent 40%);
             color: #ffffff;
             line-height: 1.6;
             padding: 40px 20px;
@@ -17,43 +20,73 @@
         
         .container { max-width: 1200px; margin: 0 auto; }
         
-        .header {
-            text-align: center;
+        /* --- NEW HEADER STYLE --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 60px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 40px;
         }
-        
-        .logo-container {
-            margin-bottom: 30px;
+
+        .header-left {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 25px;
         }
-        
-        .logo-container img { max-width: 300px; height: auto; }
-        .logo-container .instagram-logo { max-width: 50px; height: auto; }
-        
-        .header h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
+
+        .partner-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
         }
-        
-        .header .subtitle { font-size: 18px; color: #888; font-weight: 400; }
-        .header .date { font-size: 14px; color: #666; margin-top: 8px; }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .audit-badge {
+            display: inline-block;
+            background: #10b981;
+            color: #000;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-date {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* --- Existing Styles Preserved Below --- */
 
         /* Operating System Banner - Updated Colors */
         .os-banner {
-            max-width: 980px;
-            margin: 28px auto 0;
+            max-width: 100%;
+            margin: 0 auto 60px; /* Adjusted margin */
             background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(6,182,212,0.10) 100%);
             border: 1px solid rgba(16,185,129,0.25);
             border-radius: 14px;
-            padding: 18px 20px;
+            padding: 24px;
             text-align: left;
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
@@ -92,7 +125,8 @@
             color: #c9c9c9;
             font-size: 14px;
             line-height: 1.75;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            max-width: 800px;
         }
 
         .os-grid {
@@ -139,7 +173,7 @@
         .os-divider {
             height: 1px;
             background: rgba(255,255,255,0.08);
-            margin: 16px 0 14px;
+            margin: 24px 0;
         }
 
         .os-support {
@@ -237,11 +271,12 @@
         /* Section Title - Now uses teal/emerald */
         .section-title {
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 30px;
             color: #ffffff;
-            border-left: 4px solid #10b981;
-            padding-left: 16px;
+            border-left: 5px solid #10b981;
+            padding-left: 20px;
+            letter-spacing: -1px;
         }
         
         .metrics-grid {
@@ -280,9 +315,10 @@
             border-radius: 12px;
             padding: 32px;
             margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .highlight-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 600; }
+        .highlight-card h3 { font-size: 20px; margin-bottom: 12px; font-weight: 700; }
         .highlight-card p { font-size: 16px; line-height: 1.7; opacity: 0.95; }
         
         .sponsors-table {
@@ -306,10 +342,11 @@
         /* Sponsor header - Now uses teal */
         .sponsor-row.header {
             background: #10b981;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            color: #000;
         }
         
         .sponsor-row:last-child { border-bottom: none; }
@@ -670,6 +707,8 @@
         }
 
         @media (max-width: 768px) {
+            .main-header { flex-direction: column; gap: 20px; text-align: center; }
+            .header-right { text-align: center; }
             .sponsor-row { grid-template-columns: 1fr; gap: 8px; }
             .bar-chart { height: 350px; }
             .projection-metrics { grid-template-columns: 1fr; }
@@ -685,84 +724,87 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Power_Slap_Logo.svg/800px-Power_Slap_Logo.svg.png" alt="Power Slap Logo">
-                <img class="instagram-logo" src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-icon-Logo-2016-present.png" alt="Instagram">
+        
+        <header class="main-header">
+            <div class="header-left">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Power_Slap_Logo.svg/800px-Power_Slap_Logo.svg.png" alt="Power Slap" class="partner-logo">
+                <div class="header-divider"></div>
+                <div class="brand-name">THRILL ONE SPORTS <span style="font-weight: 300; color: #888;">AVI AUDIT</span></div>
+            </div>
+            <div class="header-right">
+                <span class="audit-badge">Digital Performance Audit</span>
+                <div style="font-weight: 700; font-size: 1.1rem; margin: 4px 0;">Instagram Analysis</div>
+                <div class="meta-date">Dec 14, 2025 – Jan 13, 2026</div>
+            </div>
+        </header>
+
+        <div class="os-banner">
+            <div class="os-kicker"><span class="dot"></span> Operating System</div>
+            <div class="os-title">The Power Slap Social Content Operating System</div>
+            <div class="os-subtext">
+                AVI is the orchestration layer that unifies content, sponsorship, and analytics in one system, pairing platform infrastructure with ongoing advisory guidance to forecast, ship, and iterate based on data—saving time and reducing operating costs.
             </div>
 
-            <h1>Instagram Performance Audit</h1>
-            <div class="subtitle">Strategic Analysis & Optimization Framework</div>
-            <div class="date">Analysis Period: December 14, 2025 – January 13, 2026</div>
+            <div class="os-grid">
+                <div class="os-pill">
+                    <div class="pill-top">
+                        <div class="pill-label">Measure</div><div class="pill-icon">📈</div>
+                    </div>
+                    <div class="pill-text">Daily EMV + exposure tracking by post, sponsor, series, and event.</div>
+                </div>
+                <div class="os-pill">
+                    <div class="pill-top">
+                        <div class="pill-label">Organize</div><div class="pill-icon">🧭</div>
+                    </div>
+                    <div class="pill-text">Format taxonomy + event tagging so content is searchable inventory.</div>
+                </div>
+                <div class="os-pill">
+                    <div class="pill-top">
+                        <div class="pill-label">Optimize</div><div class="pill-icon">⚙️</div>
+                    </div>
+                    <div class="pill-text">Simple decision loops for cadence, collaborators, creative mix, and integrations.</div>
+                </div>
+                <div class="os-pill">
+                    <div class="pill-top">
+                        <div class="pill-label">Commercialize</div><div class="pill-icon">💼</div>
+                    </div>
+                    <div class="pill-text">Sponsor-ready reporting + pricing logic that supports renewals and upsells.</div>
+                </div>
+            </div>
 
-            <div class="os-banner">
-                <div class="os-kicker"><span class="dot"></span> Operating System</div>
-                <div class="os-title">The Power Slap Social Content Operating System</div>
-                <div class="os-subtext">
-                    AVI is the orchestration layer that unifies content, sponsorship, and analytics in one system, pairing platform infrastructure with ongoing advisory guidance to forecast, ship, and iterate based on data—saving time and reducing operating costs.
+            <div class="os-divider"></div>
+
+            <div class="os-support">
+                <div class="support-card">
+                    <div class="support-title">What makes it an operating system</div>
+                    <ul class="support-list">
+                        <li><span class="check">✓</span> We implement it, keep it current, and run the review cadence with you (not a one-time handoff).</li>
+                        <li><span class="check">✓</span> We maintain sponsor mapping + data hygiene so reporting stays consistent and defensible.</li>
+                        <li><span class="check">✓</span> We standardize how content and commercial teams label, package, and evaluate posts.</li>
+                        <li><span class="check">✓</span> We automate the repetitive work: tracking, dashboards, and monthly reporting workflows.</li>
+                    </ul>
                 </div>
 
-                <div class="os-grid">
-                    <div class="os-pill">
-                        <div class="pill-top">
-                            <div class="pill-label">Measure</div><div class="pill-icon">📈</div>
-                        </div>
-                        <div class="pill-text">Daily EMV + exposure tracking by post, sponsor, series, and event.</div>
+                <div class="support-micro">
+                    <div class="micro">
+                        <div class="micro-label">Primary Outcome</div>
+                        <div class="micro-value">Sponsor clarity</div>
+                        <div class="micro-note">Performance is traceable by sponsor, series, and format—no guesswork.</div>
                     </div>
-                    <div class="os-pill">
-                        <div class="pill-top">
-                            <div class="pill-label">Organize</div><div class="pill-icon">🧭</div>
-                        </div>
-                        <div class="pill-text">Format taxonomy + event tagging so content is searchable inventory.</div>
+                    <div class="micro">
+                        <div class="micro-label">Operational Outcome</div>
+                        <div class="micro-value">Less lift</div>
+                        <div class="micro-note">Tracking and reporting runs automatically; the team stays focused on output.</div>
                     </div>
-                    <div class="os-pill">
-                        <div class="pill-top">
-                            <div class="pill-label">Optimize</div><div class="pill-icon">⚙️</div>
-                        </div>
-                        <div class="pill-text">Simple decision loops for cadence, collaborators, creative mix, and integrations.</div>
+                    <div class="micro">
+                        <div class="micro-label">Commercial Outcome</div>
+                        <div class="micro-value">Cleaner renewals</div>
+                        <div class="micro-note">Reporting that aligns with how partners buy and how you sell.</div>
                     </div>
-                    <div class="os-pill">
-                        <div class="pill-top">
-                            <div class="pill-label">Commercialize</div><div class="pill-icon">💼</div>
-                        </div>
-                        <div class="pill-text">Sponsor-ready reporting + pricing logic that supports renewals and upsells.</div>
-                    </div>
-                </div>
-
-                <div class="os-divider"></div>
-
-                <div class="os-support">
-                    <div class="support-card">
-                        <div class="support-title">What makes it an operating system</div>
-                        <ul class="support-list">
-                            <li><span class="check">✓</span> We implement it, keep it current, and run the review cadence with you (not a one-time handoff).</li>
-                            <li><span class="check">✓</span> We maintain sponsor mapping + data hygiene so reporting stays consistent and defensible.</li>
-                            <li><span class="check">✓</span> We standardize how content and commercial teams label, package, and evaluate posts.</li>
-                            <li><span class="check">✓</span> We automate the repetitive work: tracking, dashboards, and monthly reporting workflows.</li>
-                        </ul>
-                    </div>
-
-                    <div class="support-micro">
-                        <div class="micro">
-                            <div class="micro-label">Primary Outcome</div>
-                            <div class="micro-value">Sponsor clarity</div>
-                            <div class="micro-note">Performance is traceable by sponsor, series, and format—no guesswork.</div>
-                        </div>
-                        <div class="micro">
-                            <div class="micro-label">Operational Outcome</div>
-                            <div class="micro-value">Less lift</div>
-                            <div class="micro-note">Tracking and reporting runs automatically; the team stays focused on output.</div>
-                        </div>
-                        <div class="micro">
-                            <div class="micro-label">Commercial Outcome</div>
-                            <div class="micro-value">Cleaner renewals</div>
-                            <div class="micro-note">Reporting that aligns with how partners buy and how you sell.</div>
-                        </div>
-                        <div class="micro">
-                            <div class="micro-label">Strategic Outcome</div>
-                            <div class="micro-value">Faster iteration</div>
-                            <div class="micro-note">Each cycle improves formats, distribution, and sponsor packaging.</div>
-                        </div>
+                    <div class="micro">
+                        <div class="micro-label">Strategic Outcome</div>
+                        <div class="micro-value">Faster iteration</div>
+                        <div class="micro-note">Each cycle improves formats, distribution, and sponsor packaging.</div>
                     </div>
                 </div>
             </div>
